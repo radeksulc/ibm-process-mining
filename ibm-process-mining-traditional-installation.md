@@ -171,6 +171,7 @@ Set installation variables and keep them active during the whole installation in
 export PM_HOME="/opt/processmining"
 export PM_USER=itzuser
 export PM_GROUP=itzuser
+export CERT_DIR="/opt/cert"
 export TMPDIR="/opt/processmining/repository/temp"
 ```
 Extract the Process Mining tgz to its destination.
@@ -223,10 +224,6 @@ itzvsi-060001ps1p-0959rrek.demo.ibm.cloud.com
 ```
 Create a directory for your certs and create file
 ```
-export CERT_DIR="/opt/cert"
-export PM_USER=itzuser
-export PM_GROUP=itzuser
-
 sudo mkdir ${CERT_DIR}
 sudo chown -R ${PM_USER}:${PM_GROUP} ${CERT_DIR}
 cd ${CERT_DIR}
