@@ -8,10 +8,13 @@
 * All components running in one VM.
 * MongoDB - Installed manually as a pre-requisite as if it installed on a dedicated server, connected using a network connection from Process Mining. The network connection connect Process Mining and MongoDB, there are no local files dependencies.
 * MonetDB - Using budled version with PM. Connecting PM toremotely to MonetDB is not officialy supported yet. TBD follow-up on IBM Support Case TS018813066 trying to get statement about future roadmap.
+* Process Mining - Installed under non-root user into /opt/processmining
 
 IBM Process Mining - Installation planning documentation: https://www.ibm.com/docs/en/process-mining/2.0.0?topic=environments-planning-installation
 
 IBM Process Mining - System requirements documentation: https://www.ibm.com/docs/en/process-mining/2.0.0?topic=installation-system-requirements
+
+
 
 ## Supported databases:
 - MongoDB 6.0 or 7.0 - Using the latest sub-version of version 7 following statement from IBM Support below. Currently version 7.0.18. Using Community Edition.
@@ -28,8 +31,6 @@ As you can see only version 6 & 7 are still active, and Version 8 is just out.
 you do not need to install it manually.
 as stated
 https://www.ibm.com/docs/en/process-mining/2.0.0?topic=integration-database#installing-monetDB
-
-
 
 ## Installation procedure - MongoDB V7 Community Edition
 
@@ -332,11 +333,12 @@ vi start.sh
 
 Add following commands
 ```
+/opt/processmining/bin/pm-monet.sh start
 /opt/processmining/bin/pm-web.sh start
 /opt/processmining/bin/pm-engine.sh start
 /opt/processmining/bin/pm-analytics.sh start
-/opt/processmining/bin/pm-monitoring.sh start
 /opt/processmining/bin/pm-accelerators.sh start
+/opt/processmining/bin/pm-monitoring.sh start
 ```
 Create stop script
 ```
@@ -344,11 +346,12 @@ vi stop.sh
 ```
 Add following commands
 ```
-/opt/processmining/bin/pm-web.sh stop
-/opt/processmining/bin/pm-engine.sh stop
-/opt/processmining/bin/pm-analytics.sh stop
 /opt/processmining/bin/pm-monitoring.sh stop
 /opt/processmining/bin/pm-accelerators.sh stop
+/opt/processmining/bin/pm-analytics.sh stop
+/opt/processmining/bin/pm-engine.sh stop
+/opt/processmining/bin/pm-web.sh stop
+/opt/processmining/bin/pm-monet.sh stop
 ```
 Make scripts executable
 ```
@@ -374,6 +377,12 @@ https://www.ibm.com/docs/en/process-mining/2.0.0?topic=environments-validating-i
 - MongoDB configuration for process app - https://www.ibm.com/docs/en/process-mining/2.0.0?topic=mining-basic-setup#mongodb-configuration-for-process-app
 
 ## Misc - NOT USED
+
+### Access MongoDB using mongosh
+```
+mongosh "mongodb://localhost:27017/processmining" -u "processmining" -p "ProcessMining123"
+
+```
 
 ### Uninstall manually installed MonetDB
 
