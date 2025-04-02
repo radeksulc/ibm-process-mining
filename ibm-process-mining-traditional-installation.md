@@ -333,12 +333,13 @@ vi start.sh
 
 Add following commands
 ```
-/opt/processmining/bin/pm-monet.sh start
-/opt/processmining/bin/pm-web.sh start
-/opt/processmining/bin/pm-engine.sh start
-/opt/processmining/bin/pm-analytics.sh start
-/opt/processmining/bin/pm-accelerators.sh start
-/opt/processmining/bin/pm-monitoring.sh start
+cd /opt/processmining/bin
+./pm-monet.sh start
+./pm-web.sh start
+./pm-engine.sh start
+./pm-analytics.sh start
+./pm-accelerators.sh start
+./pm-monitoring.sh start
 ```
 Create stop script
 ```
@@ -346,12 +347,13 @@ vi stop.sh
 ```
 Add following commands
 ```
-/opt/processmining/bin/pm-monitoring.sh stop
-/opt/processmining/bin/pm-accelerators.sh stop
-/opt/processmining/bin/pm-analytics.sh stop
-/opt/processmining/bin/pm-engine.sh stop
-/opt/processmining/bin/pm-web.sh stop
-/opt/processmining/bin/pm-monet.sh stop
+cd /opt/processmining/bin
+./pm-monitoring.sh stop
+./pm-accelerators.sh stop
+./pm-analytics.sh stop
+./pm-engine.sh stop
+./pm-web.sh stop
+./pm-monet.sh stop
 ```
 Make scripts executable
 ```
