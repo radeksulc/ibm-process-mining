@@ -1,6 +1,6 @@
 # Installation of IBM Process Mining V2.0 - Traditional on RHEL
 
-> Disclaimer: This document does not replace official IBM Process Mining documentation which is available at https://www.ibm.com/docs/en/process-mining/. Use the documentation for planning and executing the installation.
+> Disclaimer: This document does not replace the official IBM Process Mining documentation which is available at https://www.ibm.com/docs/en/process-mining/. Use the documentation for planning and executing the installation.
 
 ## Installation information
 - Date of installation: March 26, 2025
