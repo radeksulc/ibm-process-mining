@@ -1,19 +1,20 @@
 # Installation of IBM Process Mining V2.0 - Traditional on RHEL
 
-## Installation info
+> Disclaimer: This document does not replace official IBM Process Mining documentation which is available at https://www.ibm.com/docs/en/process-mining/. Use the documentation for planning and executing the installation.
+
+## Installation information
 - Date of installation: March 26, 2025
 - Operating System: Red Hat Enterprise Linux release 9.2 (Plow)
 
 ## Deployment architecture
 * All components running in one VM.
 * MongoDB - Installed manually as a pre-requisite as if it installed on a dedicated server, connected using a network connection from Process Mining. The network connection connect Process Mining and MongoDB, there are no local files dependencies.
-* MonetDB - Using budled version with PM. Connecting PM toremotely to MonetDB is not officialy supported yet. TBD follow-up on IBM Support Case TS018813066 trying to get statement about future roadmap.
+* MonetDB - Using bundled version with PM. Connecting PM remotely to MonetDB is not officially supported yet. TBD follow-up on IBM Support Case TS018813066 trying to get statement about future roadmap.
 * Process Mining - Installed under non-root user into /opt/processmining
 
 IBM Process Mining - Installation planning documentation: https://www.ibm.com/docs/en/process-mining/2.0.0?topic=environments-planning-installation
 
 IBM Process Mining - System requirements documentation: https://www.ibm.com/docs/en/process-mining/2.0.0?topic=installation-system-requirements
-
 
 
 ## Supported databases:
@@ -372,9 +373,16 @@ ${PM_HOME}/bin/stop.sh
 ### Validation of the installation
 https://www.ibm.com/docs/en/process-mining/2.0.0?topic=environments-validating-installation
 
+### Advanced setup
+
+Check https://www.ibm.com/docs/en/process-mining/2.0.0?topic=integration-advanced-setup#running-as-a-service
+
+Running as a service: https://www.ibm.com/docs/en/process-mining/2.0.0?topic=integration-advanced-setup#running-as-a-service
+
+
 ## Open points, TODOs
 - Process App Accelerator - Nice to have
-- Web SSL CVertificates - Self-signed certificates should be replaced with certificates from customer's CA.
+- Web SSL Certificates - Self-signed certificates should be replaced with certificates from customer's CA.
 - MongoDB - Enable SSL connection
 - MongoDB configuration for process app - https://www.ibm.com/docs/en/process-mining/2.0.0?topic=mining-basic-setup#mongodb-configuration-for-process-app
 
